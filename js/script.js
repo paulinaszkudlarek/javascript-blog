@@ -48,7 +48,6 @@
     /* [DONE] Remove title list from left column */
     const titleList = document.querySelector(optTitleListSelector); 
     titleList.innerHTML = '';
-    //titleList.parentElement.removeChild(titleList); czy to można używać zamiennie z powyższą linijką?
     console.log('titleList: usunięto listę linków');
 
     /* [DONE] for all of articles */
@@ -76,6 +75,7 @@
       html = html + linkHTML;
       console.log('htlm: ', html);
     }
+
     titleList.innerHTML = html;
   
     const links = document.querySelectorAll('.titles a');
