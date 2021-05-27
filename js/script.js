@@ -1,10 +1,5 @@
 'use strict';
 
-/* document.getElementById('test-button').addEventListener('click', function(){
-    const links = document.querySelectorAll('.titles a');
-    console.log('links:', links);
-}); */
-
 { const titleClickHandler = function(event) {
     event.preventDefault();
     const clickedElement = this;
@@ -44,7 +39,7 @@
   optTitleListSelector = '.titles';
 
   function generateTitleLinks() {
-    console.log('wykonano funkcję generateTitleLinks')
+    console.log('wykonano funkcję generateTitleLinks');
     /* [DONE] Remove title list from left column */
     const titleList = document.querySelector(optTitleListSelector); 
     titleList.innerHTML = '';
@@ -69,8 +64,8 @@
       console.log('linkHTML: ', linkHTML);
     
       /* [DONE] insert html code to title list at left column */
-      titleList.insertAdjacentHTML('afterbegin', linkHTML)
-      console.log('titleList: ', titleList) 
+      titleList.insertAdjacentHTML('afterbegin', linkHTML);
+      console.log('titleList: ', titleList); 
       
       html = html + linkHTML;
       console.log('htlm: ', html);
@@ -85,8 +80,6 @@
       link.addEventListener('click', titleClickHandler);
     }
   }
-
   
   generateTitleLinks();  
-
 }
