@@ -40,17 +40,18 @@
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list';
 
-  function generateTitleLinks() {
+  function generateTitleLinks(customSelector = '') {
     console.log('wykonano funkcję generateTitleLinks');
+    console.log('customSelector: ', customSelector);
+
     /* [DONE] Remove title list from left column */
     const titleList = document.querySelector(optTitleListSelector); 
     titleList.innerHTML = '';
     console.log('titleList: usunięto listę linków');
 
     /* [DONE] for all of articles */
-    const articles = document.querySelectorAll(optArticleSelector);
-
-    let html = '';
+    const articles = document.querySelectorAll(optArticleSelector + customSelector);
+    console.log('optArticleSelector + customSelector: ', optArticleSelector + customSelector);    let html = '';
 
     for(let article of articles) {  
  
