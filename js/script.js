@@ -38,7 +38,8 @@
   const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author';
 
   function generateTitleLinks(customSelector = '') {
     console.log('wykonano funkcję generateTitleLinks');
@@ -193,4 +194,42 @@
   }
   
   addClickListenersToTags();
+
+  function generateAuthors () {
+    console.log('wywołano generateAuthors');
+
+    /* find all articles */
+    const articles = document.querySelectorAll(optArticleSelector);
+    console.log('articles: ', articles);
+    
+    /* START LOOP: for every article: */
+    for(let article of articles) {
+
+      /* find authors wrapper */
+      const authorWrapper = article.querySelector(optArticleAuthorSelector);
+      console.log('authorWrapper: ', authorWrapper);
+
+      /* make html variable with empty string */
+      let html ='';
+
+      /* get authors from data-author attribute */
+      const author = article.getAttribute('data-author');
+      console.log('author: ', author);
+
+      /* generate HTML of the link */
+      const linkHTML = '<a href="#' + author + '"><span>' + author + '</span></a>';
+      console.log('linkHTML: ', linkHTML);
+
+      /* add generated code to html variable */
+      html = html + linkHTML;
+
+      /* insert HTML of the link into the author wrapper */
+      authorWrapper.insertAdjacentHTML('beforeend', linkHTML);
+
+      /* END LOOP: for every article: */
+    }
+
+  }
+  generateAuthors ();
+
 }
