@@ -205,9 +205,7 @@
     /* find all articles */
     const articles = document.querySelectorAll(optArticleSelector);
     console.log('articles: ', articles);
-    
-    /* make html variable with empty string */
-    let html ='';
+      
 
     /* START LOOP: for every article: */
     for(let article of articles) {
@@ -219,6 +217,9 @@
       /* get authors from data-author attribute */
       const author = article.getAttribute('data-author');
       console.log('author: ', author);
+
+      /* make html variable with empty string */
+      let html ='';
 
       /* generate HTML of the link */
       const linkHTML = '<a href="#author-' + author + '">' + author + '</a>';
