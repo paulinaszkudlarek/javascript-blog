@@ -241,7 +241,7 @@
     event.preventDefault();
     console.log('Author link was clicked!');
 
-    const clickedElement = this;
+    const clickedElement = this.children[0];
     console.log('this: ', this)
 
     /* make a new constant "href" and read the attribute "href" of the clicked element */
